@@ -1,0 +1,7 @@
+.footer__container{
+    background:var(--color-bg-v);
+    text-align: center;
+    width: 100vw;
+    height: 3rem;
+    bottom:0;
+}
