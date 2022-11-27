@@ -1,4 +1,7 @@
-const { Todo } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { Todo, Profile } = require('../models');
+const { signToken } = require('../utils/auth');
+
 
 const resolvers = {
 
