@@ -4,10 +4,10 @@ import { useQuery } from '@apollo/client';
 import TodoList from '../components/TodoList';
 import TodoForm from '../components/TodoForm';
 
-import { QUERY_TODO } from '../utils/queries';
+import { QUERY_TODOS } from '../utils/queries';
 
 const Home = () => {
-  const { data } = useQuery(QUERY_TODO);
+  const { data } = useQuery(QUERY_TODOS);
   const todos = data?.todos || [];
 
   return (
