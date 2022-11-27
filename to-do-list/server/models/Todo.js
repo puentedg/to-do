@@ -1,11 +1,11 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require('mongoose')
 const dateFormat = require('../utils/dateFormat');
 
 const todoSchema = new Schema ({
   text: {
   type: String,
   required:true,
-  complete: Boolean
+  trim: true
   },
   createdAt: {
     type: Date,

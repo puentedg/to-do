@@ -15,16 +15,17 @@ const typeDefs = gql`
   }
 
   type Todo {
-    id: ID!
-    text: String!
-    complete: Boolean!
+    _id: ID!
+    text: String
+    createdAt: String
   }
 
   type Query {
-    profiles: [Profile]!
-    profile(profileId: ID!): Profile
+    profiles: [Profile]
+    profile(name: String!): Profile
     hello(name: String): String!
-    todos: [Todo]
+    todos(name: String): [Thought]
+    todo(thoughtId: ID!): Thought
   }
 
   type Mutation {
@@ -33,8 +34,8 @@ const typeDefs = gql`
     removeProfile(profileId: ID!): Profile
 
     createTodo(text: String!): Todo
-    updateTodo(profileId: ID!, complete: Boolean!): Boolean
-    removeTodo(profileId: ID!): Boolean
+    updateTodo(todoId: ID!): Todo
+    removeTodo(profileId: ID!, todo: String!): Todo
   }
 `;
 

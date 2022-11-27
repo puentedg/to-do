@@ -6,9 +6,12 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
 
   Query: {
-    hello: (_, { name }) => `Hello ${name || 'World'}`,
+    hello: (_, { name }) => `Hello ${name || 'there'}`,
     
-    todos: () => Todo.find(),
+    todos: async (parent, { name }) => {
+      const params = name ? { name } : {};
+      return Todo.findAll(params).sort({ createdAt: -1 });
+    },
 
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });

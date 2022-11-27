@@ -3,7 +3,7 @@
     "name": "Gabi",
     "email": "gabi@gmail.com",
     "password": "password01",
-    "todos": ["groceries", "class"]
+    "todos": ["Groceries", "Class", "Gym"]
   },
   {
     "name": "John",
