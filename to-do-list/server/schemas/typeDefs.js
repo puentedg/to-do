@@ -14,18 +14,24 @@ const typeDefs = gql`
     profile: Profile
   }
 
+  type Todo {
+    id: ID!
+    text: String!
+    complete: Boolean!
+  }
+
   type Query {
     profiles: [Profile]!
     profile(profileId: ID!): Profile
+    hello(name: String): String!
+    todos: [Todo]
   }
 
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
-    addSkill(profileId: ID!, skill: String!): Profile
     removeProfile(profileId: ID!): Profile
-    removeSkill(profileId: ID!, skill: String!): Profile
   }
 `;
 
