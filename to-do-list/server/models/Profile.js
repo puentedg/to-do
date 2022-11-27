@@ -19,7 +19,12 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-
+  todos: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Todo',
+    },
+  ],
 });
 
 profileSchema.pre('save', async function (next) {

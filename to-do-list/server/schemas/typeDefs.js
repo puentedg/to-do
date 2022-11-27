@@ -30,8 +30,11 @@ const typeDefs = gql`
   type Mutation {
     addProfile(name: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-
     removeProfile(profileId: ID!): Profile
+
+    createTodo(text: String!): Todo
+    updateTodo(profileId: ID!, complete: Boolean!): Boolean
+    removeTodo(profileId: ID!): Boolean
   }
 `;
 
